@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-best-boilerplate": {
+    "angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -61,6 +61,8 @@
                   "with": "src/environments/environment.dev.ts"
                 }
               ],
+              "outputPath": "dist/assets/angular",
+              "baseHref": "/assets/angular/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -110,18 +112,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-best-boilerplate:build"
+            "browserTarget": "angular:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "angular:build:dev"
+            },
             "production": {
-              "browserTarget": "angular-best-boilerplate:build:production"
+              "browserTarget": "angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-best-boilerplate:build"
+            "browserTarget": "angular:build"
           }
         },
         "test": {
@@ -155,7 +160,7 @@
         }
       }
     },
-    "angular-best-boilerplate-e2e": {
+    "angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -163,11 +168,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-best-boilerplate:serve"
+            "devServerTarget": "angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-best-boilerplate:serve:production"
+              "devServerTarget": "angular:serve:production"
             }
           }
         },
@@ -183,5 +188,5 @@
       }
     }
   },
-  "defaultProject": "angular-best-boilerplate"
+  "defaultProject": "angular"
 }
