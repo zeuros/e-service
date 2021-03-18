@@ -1,0 +1,10 @@
+
+.app-with-menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+}

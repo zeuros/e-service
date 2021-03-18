@@ -1,6 +1,19 @@
 <main>
-  User list:
-  <mat-card *ngFor="let user of users | async">
-
+  <h2>User list:</h2>
+  <mat-card *ngFor="let user of (users | async)" class="my-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ...
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matRipple mat-button>LIKE</button>
+      <button matRipple mat-button>SHARE</button>
+    </mat-card-actions>
   </mat-card>
 </main>

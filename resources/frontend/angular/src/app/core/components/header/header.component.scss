@@ -1,0 +1,22 @@
+
+.toolbar {
+  display: flex;
+  &>* {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.left {
+}
+
+.center {
+
+}
+
+.links {
+  display: flex;
+  & > * {
+    padding:  8px;
+  }
+}

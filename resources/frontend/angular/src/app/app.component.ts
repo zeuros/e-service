@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {filter, map, mergeMap} from 'rxjs/operators';
 
-import { AppController } from './app.controller';
+import {AppController} from './app.controller';
+import {MainService} from './core/services/main.service';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,12 @@ import { AppController } from './app.controller';
 })
 export class AppComponent extends AppController implements OnInit {
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private titleService: Title) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    public mainService: MainService,
+    private titleService: Title
+  ) {
     super();
   }
 
