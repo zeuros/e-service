@@ -39,3 +39,5 @@ Homestead.json
 .idea/
 
 public/assets/angular/
+
+resources/views/angular.blade.php
