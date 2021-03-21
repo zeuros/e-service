@@ -1,11 +1,23 @@
-<footer class="border--default">
-  <h2>Footer</h2>
-  <small>
-    &copy;
-    <img src="https://avatars2.githubusercontent.com/u/33880071?s=460&v=4"
-         alt="Bartuck Avatar"
-         title="Hi, here Bartuck : )"
-         width="30">
-    Thank you for downloading angular-best-boilerplate!
-  </small>
-</footer>
+<mat-toolbar class="toolbar" color="primary">
+
+  <div class="links">
+    <div>
+      <a [routerLink]="['/']"
+         [title]="trans.home">
+        <mat-icon [inline]="true">home</mat-icon>
+      </a>
+    </div>
+    <div [routerLink]="['/search']">
+      <a>
+        <mat-icon [inline]="true">search</mat-icon>
+      </a>
+    </div>
+    <div (click)="mainService.toggleSideNav()">
+      <a>
+        <mat-icon [inline]="true">account_circle</mat-icon>
+      </a>
+    </div>
+  </div>
+
+</mat-toolbar>
+

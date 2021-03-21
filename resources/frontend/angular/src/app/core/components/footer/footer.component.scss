@@ -1,0 +1,27 @@
+
+.toolbar {
+  display: flex;
+
+  &>* {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.left {
+}
+
+.center {
+
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+  & > * {
+    padding:  8px;
+  }
+}

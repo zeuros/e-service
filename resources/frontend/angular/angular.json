@@ -35,6 +35,9 @@
               "src/lib/js/modernizr-touch-events.js"
             ]
           },
+          "styles": [
+            "src/styles.scss"
+          ],
           "configurations": {
             "production": {
               "budgets": [
@@ -79,10 +82,10 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
+              "aot": false,
+              "extractLicenses": false,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": false
             },
             "stage": {
               "budgets": [
@@ -133,7 +136,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular:build"
+            "browserTarget": "angular:build",
           },
           "configurations": {
             "dev": {

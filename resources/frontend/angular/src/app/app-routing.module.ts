@@ -14,7 +14,7 @@ const routes: Routes = [
     }
   },
   {
-    path: routerConfig.users.base,
+    path: routerConfig.user.base,
     loadChildren: () => import('./lazy/users/users.module').then(mod => mod.UsersModule)
   }
 ];

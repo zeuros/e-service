@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import 'src/lib/core/theming/flamant';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,8 +13,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-primary: mat-palette($mat-indigo);
-$angular-accent: mat-palette($mat-pink, A200, A100, A400);
+// Palette built here: http://mcg.mbitson.com/#!?crevette=%23fbc9a4&themename=crevette
+
+
+$angular-primary: mat-palette($md-flamant);
+$angular-accent: mat-palette($md-flamant, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $angular-warn: mat-palette($mat-red);
@@ -33,8 +37,20 @@ $angular-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($angular-theme);
 
-/* You can add global styles to this file, and also import other style files */
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Nunito, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+/* You can add global styles to this file,
+and also import other style files */
 @import "styles/main";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Nunito, "Helvetica Neue", sans-serif; }

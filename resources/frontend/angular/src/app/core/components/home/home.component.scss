@@ -1,6 +1,15 @@
+@import "src/styles/general/colors";
 
-main {
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: auto; // it pulls this element on top
   padding: 15px;
+
+  mat-form-field {
+    border-radius: 10px;
+  }
 }
 
 .my-card {
@@ -8,4 +17,12 @@ main {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.mat-select-panel {
+  background: $main-color;
+}
+
+mat-form-field {
+  width: 100%;
 }

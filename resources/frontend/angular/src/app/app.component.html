@@ -1,12 +1,6 @@
+<!--<app-header></app-header>-->
 
-<mat-sidenav-container>
-  <mat-sidenav mode="over" [opened]="mainService.openSideNav$ | async">Sidenav content</mat-sidenav>
-  <mat-sidenav-content class="app-with-menus">
-    <app-header></app-header>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
-    <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
 
