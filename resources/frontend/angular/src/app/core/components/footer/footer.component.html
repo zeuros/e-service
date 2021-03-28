@@ -1,18 +1,20 @@
 <mat-toolbar class="toolbar" color="primary">
 
   <div class="links">
-    <div>
-      <a [routerLink]="['/']"
-         [title]="trans.home">
-        <mat-icon [inline]="true">home</mat-icon>
-      </a>
-    </div>
-    <div [routerLink]="['/search']">
+
+    <div [routerLink]="['/']" matTooltip="Rechercher un service" matTooltipPosition="above">
       <a>
         <mat-icon [inline]="true">search</mat-icon>
       </a>
     </div>
-    <div (click)="mainService.toggleSideNav()">
+
+    <div [routerLink]="['/nouvelle-annonce']" matTooltip="Ajouter une annonce" matTooltipPosition="above">
+      <a>
+        <mat-icon [inline]="true">add_circle_outline</mat-icon>
+      </a>
+    </div>
+
+    <div  [routerLink]="['/votre-compte']" matTooltip="Votre compte" matTooltipPosition="above">
       <a>
         <mat-icon [inline]="true">account_circle</mat-icon>
       </a>

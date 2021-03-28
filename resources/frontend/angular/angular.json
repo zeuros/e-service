@@ -78,7 +78,7 @@
               ],
               "outputPath": "dist/assets/angular",
               "baseHref": "/assets/angular/",
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,

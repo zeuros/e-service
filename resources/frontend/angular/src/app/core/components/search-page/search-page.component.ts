@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {of, Observable} from 'rxjs';
 import {User} from '../../../shared/model/user';
 import {CityService} from '../../services/city.service';
-import {ConfigurationService} from '../../services/configuration.service';
 
 // @TODO: move to classes place
 export class City {
@@ -13,23 +12,19 @@ export class City {
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './search-page.component.html',
+  styleUrls: ['./search-page.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class SearchPageComponent implements OnInit {
   prestations = new FormControl();
   stateGroup = new FormControl();
   appointmentDate = new FormControl();
 
-  prestationList: string[] = [];
   cities: City[] = [];
 
   constructor(
     private cityService: CityService,
-    private configurationService: ConfigurationService,
   ) {
-    this.configurationService.configuration$.subscribe(conf =>
-      this.prestationList = conf.prestationList);
 
     this.cityService.cities$.subscribe(cities =>
       this.cities = cities);
@@ -49,8 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   showCity = (city: City): string =>
-    city.name + (city.postCode ? ' (' + city.postCode + ')' : '')
-
+    city ? city.name + (city.postCode ? ' (' + city.postCode + ')' : '') : ''
 
   get users(): Observable<User[]> {
     return of([{

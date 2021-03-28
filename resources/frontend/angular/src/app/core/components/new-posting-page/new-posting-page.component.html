@@ -1,0 +1,12 @@
+<mat-toolbar color="accent">Nouvelle annonce</mat-toolbar>
+
+<!-- Titre -->
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Titre de l'annonce</mat-label>
+  <input matInput [formControl]="postingTitle">
+</mat-form-field>
+
+<!--select category-->
+<app-posting-categories-select
+  [prestations]="prestations"
+></app-posting-categories-select>

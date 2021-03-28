@@ -8,6 +8,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+// loading element container to transition
+const loadingElement = document.querySelector(".app-loading");
 
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch(err => console.error(err))
+  // trigger the transition
+  .then(() => loadingElement.classList.add("loaded"))
+  // remove the loading element after the transition is complete to prevent swallowed clicks
+  .then(() => setTimeout(() => loadingElement.remove(), 4000));

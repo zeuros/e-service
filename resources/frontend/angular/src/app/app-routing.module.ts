@@ -2,15 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {AppController} from './app.controller';
-import { HomeComponent } from './core/components/home/home.component';
+import { SearchPageComponent } from './core/components/search-page/search-page.component';
+import { NewPostingPageComponent } from './core/components/new-posting-page/new-posting-page.component';
 import { routerConfig } from './core/config/router-config.const';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: SearchPageComponent,
     data: {
       title: AppController.trans().home
+    }
+  },
+  {
+    path: 'nouvelle-annonce',
+    component: NewPostingPageComponent,
+    data: {
+      title: 'Nouvelle annonce'
     }
   },
   {

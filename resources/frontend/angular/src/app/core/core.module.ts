@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
@@ -13,35 +14,38 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {FooterComponent} from './components/footer/footer.component';
 import {HeaderComponent} from './components/header/header.component';
-import {HomeComponent} from './components/home/home.component';
-import {LandingPageComponent} from './components/landing-page/landing-page.component';
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {NewPostingPageComponent} from './components/new-posting-page/new-posting-page.component';
+import {PostingCategoriesSelectComponent} from './components/posting-categories-select/posting-categories-select.component';
+import {SearchPageComponent} from './components/search-page/search-page.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule,
-        MatCardModule,
-        MatButtonModule,
-        MatSliderModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatRippleModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatInputModule,
-        MatAutocompleteModule
-    ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatRippleModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatTooltipModule
+  ],
   declarations: [
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    LandingPageComponent
+    SearchPageComponent,
+    NewPostingPageComponent,
+    PostingCategoriesSelectComponent
   ],
   exports: [
     HeaderComponent,

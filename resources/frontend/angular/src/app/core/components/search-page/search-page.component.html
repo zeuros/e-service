@@ -1,16 +1,8 @@
+<mat-toolbar color="accent">Trouver une prestation</mat-toolbar>
 
-<mat-form-field color="primary" appearance="fill">
-  <mat-label>Prestation</mat-label>
-  <mat-select [formControl]="prestations" multiple>
-    <mat-select-trigger>
-      {{prestations.value ? prestations.value[0] : ''}}
-      <span *ngIf="prestations.value?.length > 1" class="example-additional-selection">
-        (+{{prestations.value.length - 1}} {{prestations.value?.length === 2 ? 'other' : 'others'}})
-      </span>
-    </mat-select-trigger>
-    <mat-option *ngFor="let topping of prestationList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field>
+<app-posting-categories-select
+  [prestations]="prestations"
+></app-posting-categories-select>
 
 <!--  <mat-form-field class="example-full-width" appearance="fill">-->
 <!--    <mat-label>Heure et date</mat-label>-->
@@ -22,7 +14,7 @@
 <!-- date -->
 <mat-form-field color="primary" appearance="fill">
   <mat-label>Date</mat-label>
-  <input matInput [matDatepicker]="picker" [formControl]="appointmentDate" [matDatepickerFilter]="datePickerFilter">
+  <input matInput [matDatepicker]="picker" (click)="picker.open()" [formControl]="appointmentDate" [matDatepickerFilter]="datePickerFilter">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
   <!--    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>-->

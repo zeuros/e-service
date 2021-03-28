@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {of, Observable, Subject} from 'rxjs';
-import {City} from '../components/home/home.component';
+import {City} from '../components/search-page/search-page.component';
 
 @Injectable({
   providedIn: 'root'
