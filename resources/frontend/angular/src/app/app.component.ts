@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {filter, map, mergeMap} from 'rxjs/operators';
 
 import {AppController} from './app.controller';
@@ -9,9 +9,11 @@ import {MainService} from './core/services/main.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent extends AppController implements OnInit {
+
+  private previousPath = '';
 
   constructor(
     private router: Router,
