@@ -3,8 +3,7 @@
   "version": "0.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration=dev --source-map=false --open",
-    "build": "ng build",
+    "start": "ng serve --configuration=dev --open",
     "build:prod": "ng build --prod && cp ../../../public/assets/angular/index.html ../../views/angular.blade.php",
     "test": "ng test",
     "lint": "ng lint",
