@@ -20,6 +20,9 @@ import {HeaderComponent} from './components/header/header.component';
 import {NewPostingPageComponent} from './components/new-posting-page/new-posting-page.component';
 import {PostingCategoriesSelectComponent} from './components/posting-categories-select/posting-categories-select.component';
 import {SearchPageComponent} from './components/search-page/search-page.component';
+import { YourAccountComponent } from './components/your-account/your-account.component';
+import { ClientAccountComponent } from './components/your-account/client-account/client-account.component';
+import { SellerAccountComponent } from './components/your-account/seller-account/seller-account.component';
 
 @NgModule({
   imports: [
@@ -45,7 +48,10 @@ import {SearchPageComponent} from './components/search-page/search-page.componen
     FooterComponent,
     SearchPageComponent,
     NewPostingPageComponent,
-    PostingCategoriesSelectComponent
+    PostingCategoriesSelectComponent,
+    YourAccountComponent,
+    ClientAccountComponent,
+    SellerAccountComponent
   ],
   exports: [
     HeaderComponent,

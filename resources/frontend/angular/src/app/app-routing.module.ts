@@ -5,6 +5,7 @@ import {AppController} from './app.controller';
 import { SearchPageComponent } from './core/components/search-page/search-page.component';
 import { NewPostingPageComponent } from './core/components/new-posting-page/new-posting-page.component';
 import { routerConfig } from './core/config/router-config.const';
+import {YourAccountComponent} from "./core/components/your-account/your-account.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,13 @@ const routes: Routes = [
     component: NewPostingPageComponent,
     data: {
       title: 'Nouvelle annonce'
+    }
+  },
+  {
+    path: 'votre-compte',
+    component: YourAccountComponent,
+    data: {
+      title: 'Votre compte'
     }
   },
   {
