@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+$laravelPath = __DIR__.(file_exists(__DIR__.'/protected/bootstrap/app.php') ? '/protected' : '/..');
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
@@ -16,9 +18,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
-    require __DIR__.'/../storage/framework/maintenance.php';
-}
+if ( file_exists($laravelPath.'/storage/framework/maintenance.php') )
+    require $laravelPath.'/storage/framework/maintenance.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require $laravelPath.'/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once file_exists(__DIR__.'/protected/bootstrap/app.php') ? __DIR__.'/protected/bootstrap/app.php' : '../bootstrap/app.php';
+$app = require_once $laravelPath.'/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
