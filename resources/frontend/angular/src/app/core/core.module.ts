@@ -20,9 +20,11 @@ import {HeaderComponent} from './components/header/header.component';
 import {NewPostingPageComponent} from './components/new-posting-page/new-posting-page.component';
 import {PostingCategoriesSelectComponent} from './components/posting-categories-select/posting-categories-select.component';
 import {SearchPageComponent} from './components/search-page/search-page.component';
-import { YourAccountComponent } from './components/your-account/your-account.component';
-import { ClientAccountComponent } from './components/your-account/client-account/client-account.component';
-import { SellerAccountComponent } from './components/your-account/seller-account/seller-account.component';
+import {YourAccountComponent} from './components/your-account/your-account.component';
+import {ClientAccountComponent} from './components/your-account/client-account/client-account.component';
+import {SellerAccountComponent} from './components/your-account/seller-account/seller-account.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   imports: [
@@ -41,7 +43,9 @@ import { SellerAccountComponent } from './components/your-account/seller-account
     MatNativeDateModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule,
+    MatButtonToggleModule
   ],
   declarations: [
     HeaderComponent,

@@ -1,1 +1,29 @@
-<p>seller-account-page works!</p>
+<form class="seller-form" [formGroup]="sellerForm" novalidate>
+
+  <mat-button-toggle-group #group="matButtonToggleGroup" formControlName="sex">
+    <mat-button-toggle value="'M'">
+      <span>Monsieur</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="'F">
+      <span>Madame</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-form-field color="primary" appearance="fill">
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field color="primary" appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date de naissance</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="01/01/2000" [min]="minDate" [max]="maxDate" formControlName="birthDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+
+</form>
