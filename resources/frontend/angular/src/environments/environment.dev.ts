@@ -4,6 +4,6 @@ export const environment: AppEnvironment = {
   production: false,
   baseApiUrl: 'https://localhost:8000/api/',
   security: {
-    allowedOrigins: 'https://dev.example.com'
+    allowedOrigins: '*' // on dev, we allow every redirection, it'll be defined into proxy for other environments
   }
 };

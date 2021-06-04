@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/router';
+import { KeycloakService } from 'keycloak-angular';
 import {filter, map, mergeMap} from 'rxjs/operators';
 
 import {AppController} from './app.controller';
@@ -19,7 +20,7 @@ export class AppComponent extends AppController implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public mainService: MainService,
-    private titleService: Title
+    private titleService: Title,
   ) {
     super();
   }
