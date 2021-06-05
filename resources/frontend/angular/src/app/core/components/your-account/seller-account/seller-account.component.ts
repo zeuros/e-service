@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-seller-account',
   templateUrl: './seller-account.component.html',
-  styleUrls: ['./seller-account.component.scss']
+  styleUrls: ['./seller-account.component.scss'],
 })
 export class SellerAccountComponent implements OnInit {
 

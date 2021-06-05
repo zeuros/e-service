@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-new-posting-page',
@@ -10,7 +10,14 @@ export class NewPostingPageComponent implements OnInit {
   postingTitle = new FormControl();
   prestations = new FormControl();
 
-  constructor() { }
+
+  newPostPage: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+  ) {
+    this.newPostPage = this.fb.group({});
+  }
 
   ngOnInit(): void {
   }

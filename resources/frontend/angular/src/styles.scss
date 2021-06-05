@@ -16,7 +16,7 @@
 // Palette built here: http://mcg.mbitson.com/#!?crevette=%23fbc9a4&themename=crevette
 
 
-$angular-primary: mat-palette($md-flamant);
+$angular-primary: mat-palette($md-flamant, 900);
 $angular-accent: mat-palette($md-flamant, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).

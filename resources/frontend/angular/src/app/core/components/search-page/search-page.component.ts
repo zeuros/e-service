@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {of, Observable} from 'rxjs';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Observable, of} from 'rxjs';
 import {User} from '../../../shared/model/user';
 import {CityService} from '../../services/city.service';
 
@@ -13,17 +13,19 @@ export class City {
 @Component({
   selector: 'app-home',
   templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.scss']
+  styleUrls: ['./search-page.component.scss'],
 })
 export class SearchPageComponent implements OnInit {
   prestations = new FormControl();
   stateGroup = new FormControl();
   appointmentDate = new FormControl();
 
+  findAServiceForm: FormGroup;
   cities: City[] = [];
 
   constructor(
     private cityService: CityService,
+    private fb: FormBuilder,
   ) {
 
     this.cityService.cities$.subscribe(cities =>
@@ -32,6 +34,9 @@ export class SearchPageComponent implements OnInit {
     this.stateGroup.valueChanges.subscribe(v =>
       cityService.refreshCities(v).subscribe(cities =>
         this.cities = cities));
+
+    this.findAServiceForm = this.fb.group({});
+
   }
 
   ngOnInit() {

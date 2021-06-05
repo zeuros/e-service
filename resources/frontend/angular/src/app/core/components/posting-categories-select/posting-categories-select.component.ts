@@ -5,7 +5,7 @@ import {ConfigurationService} from '../../services/configuration.service';
 @Component({
   selector: 'app-posting-categories-select',
   templateUrl: './posting-categories-select.component.html',
-  styleUrls: ['./posting-categories-select.component.scss']
+  styleUrls: ['./posting-categories-select.component.scss'],
 })
 export class PostingCategoriesSelectComponent implements OnInit {
   @Input()
