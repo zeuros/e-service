@@ -1,29 +1,72 @@
 <form class="homy-form seller-form" [formGroup]="sellerForm" novalidate>
 
-  <mat-button-toggle-group class="button-toggle-group" #group="matButtonToggleGroup" formControlName="sex">
+  <mat-button-toggle-group class="button-toggle-group" #group="matButtonToggleGroup" formControlName="sex" required>
     <mat-button-toggle value="'M'">
-      <span>Monsieur</span>
+      <span><fa-icon [icon]="faMale"></fa-icon> Monsieur</span>
     </mat-button-toggle>
     <mat-button-toggle value="'F">
-      <span>Madame</span>
+      <span><fa-icon [icon]="faFemale"></fa-icon> Madame</span>
     </mat-button-toggle>
   </mat-button-toggle-group>
 
-  <mat-form-field color="primary" appearance="fill">
+  <mat-form-field color="primary" appearance="outline">
     <mat-label>Prénom</mat-label>
-    <input matInput formControlName="firstName">
+    <input matInput formControlName="firstName" required>
   </mat-form-field>
 
-  <mat-form-field color="primary" appearance="fill">
+  <mat-form-field color="primary" appearance="outline">
     <mat-label>Nom</mat-label>
-    <input matInput formControlName="lastName">
+    <input matInput formControlName="lastName" required>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label>Date de naissance</mat-label>
-    <input matInput [matDatepicker]="picker" placeholder="01/01/2000" [min]="minDate" [max]="maxDate" formControlName="birthDate">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <input matInput [matDatepicker]="picker" placeholder="01/01/2000" [min]="minDate" [max]="maxDate" formControlName="birthDate" required>
+    <span matPrefix (click)="picker.open()"><fa-icon [icon]="faCalendarAlt"></fa-icon></span>
+<!--    <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>-->
     <mat-datepicker touchUi #picker></mat-datepicker>
   </mat-form-field>
+
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Siren</mat-label>
+    <input matInput formControlName="siren">
+  </mat-form-field>
+
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Adresse</mat-label>
+    <input matInput formControlName="address" required>
+    <span matPrefix><fa-icon [icon]="faLocationArrow"></fa-icon></span>
+  </mat-form-field>
+
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Téléphone</mat-label>
+    <input matInput type="tel" formControlName="telephone" required>
+    <span matPrefix><fa-icon [icon]="faPhone"></fa-icon></span>
+  </mat-form-field>
+
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" ngModel email required>
+    <span matPrefix><fa-icon [icon]="faEnvelope"></fa-icon></span>
+  </mat-form-field>
+
+  <div class="inline-inputs">
+    <mat-form-field color="primary" appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <span matPrefix><fa-icon [icon]="faEyeSlash"></fa-icon></span>
+    </mat-form-field>
+    <mat-form-field color="primary" appearance="outline">
+      <mat-label>Confirmation</mat-label>
+      <input matInput type="password" formControlName="passwordConfirm" required>
+      <span matPrefix><fa-icon [icon]="faEyeSlash"></fa-icon></span>
+    </mat-form-field>
+  </div>
+
+  <mat-slide-toggle ngDefaultControl formControlName="autoEntrepreneur">Je suis auto-entrepreneur</mat-slide-toggle>
+
+  <mat-slide-toggle ngDefaultControl formControlName="generalConditions" required>J'accepte les conditions générales</mat-slide-toggle>
+
+  <button mat-flat-button class="fat-button" color="primary">M'inscrire</button>
 
 </form>

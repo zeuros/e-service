@@ -17,7 +17,7 @@
 
 
 $angular-primary: mat-palette($md-flamant, 900);
-$angular-accent: mat-palette($md-flamant, A200, A100, A400);
+$angular-accent: mat-palette($md-flamant);
 
 // The warn palette is optional (defaults to red).
 $angular-warn: mat-palette($mat-red);

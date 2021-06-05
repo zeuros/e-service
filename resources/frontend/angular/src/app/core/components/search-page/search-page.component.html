@@ -1,20 +1,14 @@
-<form class="homy-form" [formGroup]="findAServiceForm" novalidate>
+<mat-toolbar>Trouver une prestation</mat-toolbar>
+<br>
 
-  <mat-toolbar color="accent">Trouver une prestation</mat-toolbar>
+<form class="homy-form" [formGroup]="findAServiceForm" novalidate>
 
   <app-posting-categories-select
     [prestations]="prestations"
   ></app-posting-categories-select>
 
-  <!--  <mat-form-field class="example-full-width" appearance="fill">-->
-  <!--    <mat-label>Heure et date</mat-label>-->
-  <!--    <input matInput [matDatepickerFilter]="datePickerFilter" [matDatepicker]="picker">-->
-  <!--    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
-  <!--    <mat-datepicker #picker></mat-datepicker>-->
-  <!--  </mat-form-field>-->
-
   <!-- date -->
-  <mat-form-field color="primary" appearance="fill">
+  <mat-form-field color="primary" appearance="outline">
     <mat-label>Date</mat-label>
     <input matInput [matDatepicker]="picker" (click)="picker.open()" [formControl]="appointmentDate" [matDatepickerFilter]="datePickerFilter">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -24,7 +18,7 @@
   </mat-form-field>
 
   <!-- autour de chez moi (ville) / autres villes select -->
-  <mat-form-field color="primary" appearance="fill">
+  <mat-form-field color="primary" appearance="outline">
     <span matPrefix>
       <mat-icon>location_on</mat-icon>
     </span>

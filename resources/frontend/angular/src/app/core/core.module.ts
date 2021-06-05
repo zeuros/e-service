@@ -25,6 +25,8 @@ import {ClientAccountComponent} from './components/your-account/client-account/c
 import {SellerAccountComponent} from './components/your-account/seller-account/seller-account.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   imports: [
@@ -42,10 +44,12 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatSlideToggleModule,
     MatAutocompleteModule,
     MatTooltipModule,
     MatRadioModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    FontAwesomeModule
   ],
   declarations: [
     HeaderComponent,
