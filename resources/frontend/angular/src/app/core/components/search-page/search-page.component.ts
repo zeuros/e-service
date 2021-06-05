@@ -51,16 +51,4 @@ export class SearchPageComponent implements OnInit {
   showCity = (city: City): string =>
     city ? city.name + (city.postCode ? ' (' + city.postCode + ')' : '') : ''
 
-  get users(): Observable<User[]> {
-    return of([{
-      id: 1,
-      name: 'toto',
-      mail: 'toto@free.fr',
-    }, {
-      id: 2,
-      name: 'titi',
-      mail: 'titi@free.fr',
-    }]);
-  }
-
 }

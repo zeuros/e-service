@@ -27,6 +27,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     PostingCategoriesSelectComponent,
     YourAccountComponent,
     ClientAccountComponent,
-    SellerAccountComponent
+    SellerAccountComponent,
+    LoginComponent
   ],
   exports: [
     HeaderComponent,
