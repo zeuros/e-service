@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://user:password@dev-api.example.pl",
+    "target": "https://localhost:8000",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,

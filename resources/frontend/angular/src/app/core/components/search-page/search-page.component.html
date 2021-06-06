@@ -1,0 +1,47 @@
+<mat-toolbar>Trouver une prestation</mat-toolbar>
+<br>
+
+<form class="homy-form" [formGroup]="findAServiceForm" novalidate>
+
+  <app-posting-categories-select
+    [prestations]="prestations"
+  ></app-posting-categories-select>
+
+  <!-- date -->
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" (click)="picker.open()" [formControl]="appointmentDate" [matDatepickerFilter]="datePickerFilter">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <!--    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>-->
+    <!--    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>-->
+  </mat-form-field>
+
+  <!-- autour de chez moi (ville) / autres villes select -->
+  <mat-form-field color="primary" appearance="outline">
+    <span matPrefix>
+      <mat-icon>location_on</mat-icon>
+    </span>
+    <mat-label>Où chercher ?</mat-label>
+    <input type="text"
+           matInput
+           [formControl]="stateGroup"
+           required
+           [matAutocomplete]="autoGroup">
+    <mat-autocomplete #autoGroup="matAutocomplete" [displayWith]="showCity">
+      <mat-optgroup label="Trouver votre emplacement">
+        <mat-option [value]="null">
+          <mat-icon>location_on</mat-icon> Trouver votre emplacement
+        </mat-option>
+      </mat-optgroup>
+      <mat-optgroup label="Trouver par ville">
+        <mat-option *ngFor="let city of cities" [value]="city">
+          {{ showCity(city) }}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button mat-flat-button class="fat-button" color="primary">Rechercher</button>
+
+</form>

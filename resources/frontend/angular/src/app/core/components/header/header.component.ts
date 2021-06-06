@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { AppController } from '../../../app.controller';
+import {AppController} from '../../../app.controller';
+import {MainService} from '../../services/main.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,13 @@ import { AppController } from '../../../app.controller';
 })
 export class HeaderComponent extends AppController implements OnInit {
 
-  ngOnInit() {
+  constructor(
+    public mainService: MainService,
+  ) {
+    super();
+  }
+
+  ngOnInit(): void {
   }
 
 }

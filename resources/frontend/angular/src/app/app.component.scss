@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.app-with-menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+}
+
+main {
+  overflow-y: auto;
+}
+
+app-footer {
+  overflow-y: hidden;
+  box-shadow: rgb(17 17 61 / 30%) 0px 4px 8px, rgb(17 17 26 / 30%) 0px 8px 16px, rgb(17 17 26 / 30%) 0px 16px 24px,
+    rgb(245 132 61 / 40%) 0px 4px 16px inset, rgb(245 132 61 / 40%) 0px 8px 24px inset, rgb(245 132 61 / 40%) 0px 16px 56px inset;
+}

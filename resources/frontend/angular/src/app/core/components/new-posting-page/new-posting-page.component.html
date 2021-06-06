@@ -1,0 +1,16 @@
+<mat-toolbar>Nouvelle annonce</mat-toolbar>
+
+<form class="homy-form" [formGroup]="newPostPage" novalidate>
+
+  <!-- Titre -->
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Titre de l'annonce</mat-label>
+    <input matInput [formControl]="postingTitle">
+  </mat-form-field>
+
+  <!--select category-->
+  <app-posting-categories-select
+    [prestations]="prestations"
+  ></app-posting-categories-select>
+
+</form>

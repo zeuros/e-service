@@ -1,0 +1,10 @@
+@import "src/styles/general/layout";
+
+:host {
+  @extend .flex-contents;
+  padding: 15px;
+}
+
+mat-toolbar {
+  margin-bottom: 15px;
+}

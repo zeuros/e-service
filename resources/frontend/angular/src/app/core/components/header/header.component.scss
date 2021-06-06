@@ -1,0 +1,15 @@
+
+.toolbar {
+  display: flex;
+  &>* {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.left {
+}
+
+.center {
+
+}

@@ -37,3 +37,15 @@ Homestead.json
 .phpunit.result.cache
 
 .idea/
+
+public/assets/angular/
+
+resources/views/angular.blade.php
+
+deployment.ini
+
+*.log
+
+.htdeployment
+
+.env.prod
