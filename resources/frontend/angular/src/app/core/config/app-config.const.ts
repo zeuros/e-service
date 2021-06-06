@@ -6,8 +6,8 @@
 import { AppConfig } from '../interfaces/app-config.interface';
 
 export const appConfig: AppConfig = {
-  appTitle: 'Angular Best Boilerplate',
+  appTitle: 'HomyCare - partagez plus qu\'un service ;)',
   browserTabTitleDelimiter: ' | ',
-  defaultLanguage: 'en_GB',
-  availableLanguages: ['en_GB', 'pl_PL']
+  defaultLanguage: 'fr_FR',
+  availableLanguages: ['fr_FR', 'en_GB', 'pl_PL']
 };

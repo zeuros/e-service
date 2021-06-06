@@ -49,3 +49,5 @@ deployment.ini
 .htdeployment
 
 .env.prod
+
+.env.dev
