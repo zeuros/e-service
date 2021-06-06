@@ -41,3 +41,11 @@ Homestead.json
 public/assets/angular/
 
 resources/views/angular.blade.php
+
+deployment.ini
+
+*.log
+
+.htdeployment
+
+.env.prod
