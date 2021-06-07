@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {first} from 'rxjs/operators';
 import {AuthenticationService} from "../../services/authentication.service";
 import {faEnvelope, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {timer} from 'rxjs';
@@ -13,7 +12,6 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
   error = '';
 
   constructor(
@@ -34,9 +32,6 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       rememberMe: [false],
     });
-
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   // convenience getter for easy access to form fields
@@ -50,20 +45,20 @@ export class LoginComponent implements OnInit {
       return;
 
     this.loading = true;
-    console.log([this.loginControls.email.value, this.loginControls.password.value])
-    this.authenticationService.login(this.loginControls.email.value, this.loginControls.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
 
-          if( !this.loginControls.rememberMe.value )
-            timer( 30 * minute ).subscribe(() =>this.authenticationService.logout())
-        },
-        error => {
-          this.error = error;
-          this.loading = false;
-        });
+    this.authenticationService.login(this.loginControls.email.value, this.loginControls.password.value).subscribe(
+      data => {
+
+        // auto disconnect if requested
+        if( !this.loginControls.rememberMe.value )
+          timer( 30 * minute ).subscribe(() =>this.authenticationService.logout());
+
+        this.router.navigate(['/']);
+
+      },
+      error => this.error = error,
+      () => this.loading = false
+    );
 
   }
 
