@@ -17,6 +17,7 @@
 
 main {
   overflow-y: auto;
+  flex: 1; // fill whole height
 }
 
 app-footer {

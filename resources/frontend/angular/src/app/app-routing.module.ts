@@ -13,32 +13,41 @@ const routes: Routes = [
   {
     path: '',
     component: SearchPageComponent,
-    canActivate: [AuthGuard],
     data: {
-      title: AppController.trans().home
-    }
+      title: AppController.trans().home,
+    },
   },
   {
     path: 'login',
     component: LoginComponent,
+    data: {
+      title: 'Bienvenue sur votre compte',
+    },
   },
   {
     path: 'nouvelle-annonce',
+    canActivate: [AuthGuard],
     component: NewPostingPageComponent,
     data: {
-      title: 'Nouvelle annonce'
-    }
+      title: 'Nouvelle annonce',
+    },
   },
   {
     path: 'votre-compte',
+    canActivate: [AuthGuard],
     component: YourAccountComponent,
     data: {
-      title: 'Votre compte'
-    }
+      title: 'Votre compte',
+    },
   },
   {
     path: routerConfig.user.base,
-    loadChildren: () => import('./lazy/users/users.module').then(mod => mod.UsersModule)
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./lazy/users/users.module').then(mod => mod.UsersModule),
+    data: {
+      title: 'Users (unused)',
+      animation: 'state1',
+    },
   },
 
   // otherwise redirect to home

@@ -3,8 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {first} from 'rxjs/operators';
 import {AuthenticationService} from "../../services/authentication.service";
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import { timer } from 'rxjs';
+import {faEnvelope, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import {timer} from 'rxjs';
 
 export const minute = 60 * 1000; // in ms
 
@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
-      rememberMe: ['', Validators.required],
+      rememberMe: [false],
     });
 
     // get return url from route parameters or default to '/'
@@ -46,26 +46,27 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
+    if (this.loginForm.invalid)
       return;
-    }
 
     this.loading = true;
-    this.authenticationService.login(this.loginControls.username.value, this.loginControls.password.value)
+    console.log([this.loginControls.email.value, this.loginControls.password.value])
+    this.authenticationService.login(this.loginControls.email.value, this.loginControls.password.value)
       .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
+
+          if( !this.loginControls.rememberMe.value )
+            timer( 30 * minute ).subscribe(() =>this.authenticationService.logout())
         },
         error => {
           this.error = error;
           this.loading = false;
         });
 
-    if( !this.loginControls.rememberMe.value )
-      timer( 30 * minute ).subscribe(() =>this.authenticationService.logout())
-
   }
 
   faEnvelope = faEnvelope;
+  faEyeSlash = faEyeSlash;
 }
